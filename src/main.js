@@ -8,18 +8,18 @@ import store from './store'
 
 Amplify.configure({
   Auth: {
-    region: 'eu-west-1',
-    userPoolId: 'eu-west-1_HPTxEJaFh',
-    userPoolWebClientId: '2n86c01m2bf72grl2b5gsqt2u1',
-    mandatorySignIn: true
+    region: process.env.AWS_APPSYNC_REGION,
+    userPoolId: process.env.AWS_APPSYNC_USER_POOL_ID,
+    userPoolWebClientId: process.env.AWS_APPSYNC_USER_POOL_WEB_CLIENT_ID,
+    mandatorySignIn: process.env.AWS_APPSYNC_MANDATORY_SIGN_IN
   }
 })
 
 
 const appConfig = {
-  'aws_appsync_graphqlEndpoint': 'https://b47neuwodzfljkjaursz6sedue.appsync-api.eu-west-1.amazonaws.com/graphql',
-  'aws_appsync_region': 'eu-west-1',
-  'aws_appsync_authenticationType': 'AMAZON_COGNITO_USER_POOLS',
+  'aws_appsync_graphqlEndpoint': process.env.AWS_APPSYNC_GRAPH_QL_ENDPOINT,
+  'aws_appsync_region': process.env.AWS_APPSYNC_REGION,
+  'aws_appsync_authenticationType': process.env.AWS_APPSYNC_AUTHENTICATION_TYPE
 }
 Amplify.configure(appConfig)
 
