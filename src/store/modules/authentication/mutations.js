@@ -6,6 +6,10 @@ export default {
     USER_LOGOUT(state) {
         state.loggedIn = false
         state.user = undefined
+    },
+    USER_SIGNUP(state, user) {
+        state.user = user;
+
     }
 }
 
