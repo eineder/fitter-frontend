@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-full h-screen">
+    <div class="flex w-full h-screen" v-escape="esc">
         <!-- left side -->
         <div class="flex w-1/2 h-full bg-blue">
             <div class="flex items-center justify-center w-full h-full">
@@ -60,7 +60,20 @@ export default {
         ...mapActions('signup', [
             'setSignupStep'
         ]),
-    }
+        esc() {
+            this.setSignupStep('');
+        }
+    },
+    // created() {
+    //     window.addEventListener('keyup', () => {
+    //         if (event.keyCode === 27) this.setSignupStep('');
+    //     });
+    // },
+    // destroyed() {
+    //     window.removeEventListener('keyup', () => {
+    //         if (event.keyCode === 27) this.setSignupStep('');
+    //     })
+    // }
 }
 </script>
 
