@@ -26,7 +26,7 @@
                 <i class="fab fa-twitter text-blue text-4xl mb-5"></i>
                 <p class="text-3xl mb-12">See what's happening in the world right now</p>
                 <p>Join Twitter today.</p>
-                <button @click.prevent="setSignUpStep('step1')"
+                <button @click.prevent="_setSignupStep('step1')"
                     class="rounded-full bg-blue font-bold text-lg text-white mt-4 p-3 hover:bg-darkblue">Sign up</button>
                 <button @click.prevent="showSignInPage"
                     class="rounded-full border border-blue bg-white font-bold text-lg text-blue mt-4 p-3 hover:bg-lightblue">Log
@@ -36,13 +36,13 @@
 
         <!-- sign up modal -->
         <div v-if="showModal != ''" class="fixed w-full h-full top-0 left-0 flex items-center justify-center">
-            <div class="absolute w-full h-full bg-gray-900 opacity-50" @click.prevent="setSignUpStep('')"></div>
+            <div class="absolute w-full h-full bg-gray-900 opacity-50" @click.prevent="_setSignupStep('')"></div>
 
             <div class="modal-main bg-white w-11/12 mx-auto rounded-lg z-50 overflow-y-auto max-h-full">Modal
 
                 <div v-if="showModal === 'step1'">
                     <div class="pl-1 pr-4 py-1 h-12">
-                        <button @click="setSignUpStep('step2')"
+                        <button @click="_setSignupStep('step2')"
                             class="rounded-full bg-blue font-bold text-white mt-2 p-1 pl-3 pr-3 relative right-0 float-right hover:bg-darkblue"
                             :class="`${!name || !email || !birthdate ? 'opacity-50 cursor-not-allowed' : ''}`">Next</button>
                         <i class="flex justify-center fab fa-twitter text-blue text-2xl mt-2 mb-8"></i>
@@ -70,10 +70,10 @@
 
                 <div v-if="showModal === 'step2'">
                     <div class="pl-1 pr-4 py-1 h-12">
-                        <button @click="setSignUpStep('step1')" class="absolute rounded-full p-2 pl-3 hover:bg-lightblue">
+                        <button @click="_setSignupStep('step1')" class="absolute rounded-full p-2 pl-3 hover:bg-lightblue">
                             <i class="fas fa-arrow-left text-blue"></i>
                         </button>
-                        <button @click="setSignUpStep('step3')"
+                        <button @click="_setSignupStep('step3')"
                             class="rounded-full bg-blue font-bold text-white mt-2 p-1 pl-3 pr-3 relative right-0 float-right hover:bg-darkblue">Next</button>
                         <i class="flex justify-center fab fa-twitter text-blue text-2xl mt-2 mb-8"></i>
                     </div>
@@ -113,10 +113,10 @@
 
                 <div v-if="showModal === 'step3'">
                     <div class="pl-1 pr-4 py-1 h-12">
-                        <button @click="setSignUpStep('step2')" class="absolute rounded-full p-2 pl-3 hover:bg-lightblue">
+                        <button @click="_setSignupStep('step2')" class="absolute rounded-full p-2 pl-3 hover:bg-lightblue">
                             <i class="fas fa-arrow-left text-blue"></i>
                         </button>
-                        <button @click="setSignUpStep('step4')"
+                        <button @click="_setSignupStep('step4')"
                             class="rounded-full bg-blue font-bold text-white mt-2 p-1 pl-3 pr-3 relative right-0 float-right hover:bg-darkblue"
                             :class="`${password.length < 8 ? 'opacity-50 cursor-not-allowed' : ''}`">Next</button>
                         <i class="flex justify-center fab fa-twitter text-blue text-2xl mt-2 mb-8"></i>
@@ -168,7 +168,7 @@ export default {
         ...mapActions('signup', [
             'setSignupStep'
         ]),
-        setSignUpStep(step) {
+        _setSignupStep(step) {
             switch (step) {
                 case 'step2':
                     if (!this.name || !this.email || !this.birthdate) {
