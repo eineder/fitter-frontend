@@ -1,5 +1,5 @@
 export default {
-    setSignupStep({ commit }, step) {
+    setSignUpStep({ commit }, step) {
         commit("SIGNUP_STEP_SET", step);
     }
 };
