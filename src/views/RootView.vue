@@ -39,6 +39,7 @@
             <div class="absolute w-full h-full bg-gray-900 opacity-50" @click.prevent="setSignupStep('')"></div>
 
             <div class="modal-main bg-white w-11/12 mx-auto rounded-lg z-50 overflow-y-auto max-h-full">Modal
+
                 <div v-if="showModal === 'step1'">
                     <div class="pl-1 pr-4 py-1 h-12">
                         <button @click="setSignUpStep('step2')"
@@ -66,6 +67,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div></div>
             </div>
         </div>
     </div>
@@ -99,16 +102,6 @@ export default {
             this.setSignupStep('');
         }
     },
-    // created() {
-    //     window.addEventListener('keyup', () => {
-    //         if (event.keyCode === 27) this.setSignupStep('');
-    //     });
-    // },
-    // destroyed() {
-    //     window.removeEventListener('keyup', () => {
-    //         if (event.keyCode === 27) this.setSignupStep('');
-    //     })
-    // }
 }
 </script>
 
