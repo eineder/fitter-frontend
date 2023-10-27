@@ -21,16 +21,37 @@
         </div>
 
         <!-- right side -->
-        <div class="flex w-1/2 h-full">
-            <div class="flex flex-col w-1/2 font-bold">
-                <i class="fab fa-twitter text-blue text-4xl mb-5"></i>
-                <p class="text-3xl mb-12">See what's happening in the world right now</p>
-                <p>Join Twitter today.</p>
-                <button @click.prevent="_setSignupStep('step1')"
-                    class="rounded-full bg-blue font-bold text-lg text-white mt-4 p-3 hover:bg-darkblue">Sign up</button>
-                <button @click.prevent="showSignInPage"
-                    class="rounded-full border border-blue bg-white font-bold text-lg text-blue mt-4 p-3 hover:bg-lightblue">Log
-                    in</button>
+        <div class="flex w-full md:w-1/2 h-full">
+            <div class="w-full absolute mt-4 hidden md:flex bg-white">
+                <form class="w-1/2 flex justify-center">
+                    <div class="bg-lightblue border-b-2 border-dark mr-4 p-2 w-1/3">
+                        <p class="text-dark truncate">Phone, email, or username</p>
+                        <input v-model="email" class="bg-lightblue text-lg w-full" type="text">
+                    </div>
+                    <div class="bg-lightblue border-b-2 border-dark mr-4 p-2 w-1/3">
+                        <p class="text-dark">Password</p>
+                        <input v-model="password" class="bg-lightblue text-lg w-full" type="password">
+                    </div>
+                    <div class="self-center">
+                        <button @click.prevent="signIn"
+                            class="font-bold rounded-full border border-blue text-blue p-2 pl-3 pr-3 hover:bg-lightblue bg-white">Log
+                            in</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="flex items-center justify-center w-full h-full">
+                <div class="w-full md:w-1/2 flex flex-col font-bold p-5 md:p-0">
+                    <i class="fab fa-twitter text-blue text-4xl mb-5"></i>
+                    <p class="text-3xl mb-12">See what's happening in the world right now</p>
+                    <p>Join Twitter today.</p>
+                    <button @click.prevent="_setSignupStep('step1')"
+                        class="rounded-full bg-blue font-bold text-lg text-white mt-4 p-3 hover:bg-darkblue">Sign
+                        up</button>
+                    <button @click.prevent="showSignInPage"
+                        class="rounded-full border border-blue bg-white font-bold text-lg text-blue mt-4 p-3 hover:bg-lightblue">Log
+                        in</button>
+                </div>
             </div>
         </div>
 
@@ -38,8 +59,7 @@
         <div v-if="showModal != ''" class="fixed w-full h-full top-0 left-0 flex items-center justify-center">
             <div class="absolute w-full h-full bg-gray-900 opacity-50" @click.prevent="_setSignupStep('')"></div>
 
-            <div class="modal-main bg-white w-11/12 mx-auto rounded-lg z-50 overflow-y-auto max-h-full">Modal
-
+            <div class="modal-main bg-white w-11/12 max-w-md mx-auto rounded-lg z-50 overflow-y-auto max-h-full">
                 <div v-if="showModal === 'step1'">
                     <div class="pl-1 pr-4 py-1 h-12">
                         <button @click="_setSignupStep('step2')"
@@ -307,7 +327,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 div {
     border: 1px dashed blue;
     padding: 15px;
@@ -316,4 +336,4 @@ div {
 div.items-center.justify-center {
     background-color: rgba(240, 240, 240, 0.5);
 }
-</style>
+</style> -->
