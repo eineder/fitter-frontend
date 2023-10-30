@@ -7,7 +7,7 @@
             </div>
             <div class="px-5 py-3 border-b-8 border-lighter flex">
                 <div class="flex-none mr-4">
-                    <img :src="'default_profile.png'" class="flex-none w-12 h-12 rounded-full" />
+                    <img :src="`${profile.image || 'default_profile.png'}`" class="flex-none w-12 h-12 rounded-full" />
                 </div>
                 <form class="w-full relative">
                     <textarea v-model="tweet.text" placeholder="What's happening?"
