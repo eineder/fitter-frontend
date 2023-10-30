@@ -7,6 +7,10 @@ const state = () => ({
         id: '',
         createdAt: '1970-01-01',
         imageUrl: 'default_profile.png'
+    },
+    tweets: {
+        tweets: [],
+        nextToken: undefined,
     }
 });
 
