@@ -16,6 +16,7 @@
 import SideNav from '../components/SideNav';
 import TweetsView from "../components/TweetsView";
 import DefaultRightBar from '../components/DefaultRightBar';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'HomeView',
@@ -23,6 +24,15 @@ export default {
     SideNav,
     TweetsView,
     DefaultRightBar
+  },
+  computed: {
+    ...mapGetters('twitter', ['profile'])
+  },
+  methods: {
+    ...mapActions('authentication', ['loginUserIfAlreadyAuthenticated'])
+  },
+  async created() {
+    await this.loginUserIfAlreadyAuthenticated();
   }
 }
 </script>
