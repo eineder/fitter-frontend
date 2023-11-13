@@ -1,17 +1,17 @@
-import actions from './actions'
-import mutations from './mutations'
-import getters from './getters'
+import actions from "./actions";
+import mutations from "./mutations";
+import getters from "./getters";
 
 const state = () => {
-    return {
-        step: ''
-    }
+  return {
+    step: "",
+  };
 };
 
 export default {
-    namespaced: true,
-    actions,
-    mutations,
-    getters,
-    state
+  namespaced: true,
+  actions,
+  mutations,
+  getters,
+  state,
 };

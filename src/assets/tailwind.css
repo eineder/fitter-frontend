@@ -4,9 +4,9 @@
 
 button:focus,
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 .modal-main {
-    height: 40rem;
+  height: 40rem;
 }

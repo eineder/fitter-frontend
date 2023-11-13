@@ -8,33 +8,32 @@
 
     <!-- default right bar -->
     <DefaultRightBar />
-
   </div>
 </template>
 
 <script>
-import SideNav from '../components/SideNav';
+import SideNav from "../components/SideNav";
 import TweetsView from "../components/TweetsView";
-import DefaultRightBar from '../components/DefaultRightBar';
-import { mapActions, mapGetters } from 'vuex';
+import DefaultRightBar from "../components/DefaultRightBar";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     SideNav,
     TweetsView,
-    DefaultRightBar
+    DefaultRightBar,
   },
   computed: {
-    ...mapGetters('twitter', ['profile'])
+    ...mapGetters("twitter", ["profile"]),
   },
   methods: {
-    ...mapActions('authentication', ['loginUserIfAlreadyAuthenticated'])
+    ...mapActions("authentication", ["loginUserIfAlreadyAuthenticated"]),
   },
   async created() {
     await this.loginUserIfAlreadyAuthenticated();
-  }
-}
+  },
+};
 </script>
 
 <style>

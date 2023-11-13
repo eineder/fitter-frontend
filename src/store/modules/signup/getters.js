@@ -1,3 +1,3 @@
 export default {
-    showModal: state => state.step
+  showModal: (state) => state.step,
 };

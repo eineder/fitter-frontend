@@ -1,24 +1,20 @@
-import {
-    getMyProfile,
-    getMyTimeline,
-} from '../../../lib/backend';
-
+import { getMyProfile, getMyTimeline, tweet } from "../../../lib/backend";
 
 export default {
-    async setProfile({ commit }) {
-        const profile = await getMyProfile();
-        // await dispatch('getMyTimeline', 10);
-        commit('PROFILE_SET', profile);
-    },
+  async setProfile({ commit }) {
+    const profile = await getMyProfile();
+    // await dispatch('getMyTimeline', 10);
+    commit("PROFILE_SET", profile);
+  },
 
-    async getMyTimeline({ commit }, limit) {
-        const timeline = await getMyTimeline(limit);
-        commit('TWITTER_TIMELINE', timeline);
-    },
+  async getMyTimeline({ commit }, limit) {
+    const timeline = await getMyTimeline(limit);
+    commit("TWITTER_TIMELINE", timeline);
+  },
 
-    // async createTweet({ commit, dispatch }, { text }) {
-    //     const newTweet = await tweet(text);
-    //     commit('TWITTER_CREATE', newTweet);
-    //     await dispatch('getMyTimeline', 10);
-    // }
+  async createTweet({ commit, dispatch }, { text }) {
+    const newTweet = await tweet(text);
+    commit("TWITTER_CREATE", newTweet);
+    await dispatch("getMyTimeline", 10);
+  },
 };

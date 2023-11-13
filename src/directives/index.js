@@ -1,7 +1,7 @@
-import escape from './escape.directive';
+import escape from "./escape.directive";
 
 export default {
-    install(Vue) {
-        Vue.directive('escape', escape);
-    }
+  install(Vue) {
+    Vue.directive("escape", escape);
+  },
 };

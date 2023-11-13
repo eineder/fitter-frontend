@@ -1,5 +1,5 @@
 export default {
-    profile: state => state.profile,
-    tweets: state => state.tweets.tweets,
-    nextTokenTweets: state => state.tweets.nextToken,
+  profile: (state) => state.profile,
+  tweets: (state) => state.tweets.tweets,
+  nextTokenTweets: (state) => state.tweets.nextToken,
 };
