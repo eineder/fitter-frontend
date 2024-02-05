@@ -35,7 +35,7 @@
 
           <!-- timeline -->
           <div v-if="tweets.length === 0" class="flex flex-col items-center justify-center w-full pt-10 px-6">
-            <p class="font-bold text-lg">Welcome to Twitter!</p>
+            <p class="font-bold text-lg">Welcome to Fitter!</p>
             <p class="text-sm text-dark text-center">
               This is the best place to see what’s happening in your world. Find
               some people and topics to follow now.
