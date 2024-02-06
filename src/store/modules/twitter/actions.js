@@ -1,9 +1,9 @@
 import { getMyProfile, getMyTimeline, tweet } from "../../../lib/backend";
 
 export default {
-  async setProfile({ commit }) {
+  async setProfile({ commit, dispatch }) {
     const profile = await getMyProfile();
-    // await dispatch('getMyTimeline', 10);
+    await dispatch("getMyTimeline", 10);
     commit("PROFILE_SET", profile);
   },
 
