@@ -99,6 +99,9 @@
             <div class="w-full bg-lightblue border-b-2 border-dark mb-8 p-2">
               <input v-model="birthdate" class="w-full bg-lightblue text-lg" type="text" />
             </div>
+            <p class="font-bold text-blue">This is just a playground - your account and all associated data will be
+              deleted after seven
+              days of inactivity.</p>
           </div>
         </div>
 
