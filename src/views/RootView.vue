@@ -47,7 +47,7 @@
         <div class="w-full md:w-1/2 flex flex-col font-bold p-5 md:p-0">
           <i class="fa-solid fa-kiwi-bird text-blue text-4xl mb-5"></i>
           <p class="text-3xl mb-12">
-            Don't like Elon? Try Fitter.
+            Does the X make you bitter?<br>Try Fitter.
           </p>
           <p>Join Fitter today.</p>
           <button @click.prevent="_setSignupStep('step1')"
