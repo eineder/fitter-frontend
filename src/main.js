@@ -6,6 +6,7 @@ import "@aws-amplify/ui-vue";
 import router from "./router";
 import store from "./store";
 import directives from "./directives";
+import filters from "./filters";
 
 Amplify.configure({
   Auth: {
@@ -29,6 +30,7 @@ Amplify.configure(appConfig);
 Vue.config.productionTip = false;
 
 Vue.use(directives);
+Vue.use(filters);
 
 new Vue({
   router,
