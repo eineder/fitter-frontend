@@ -364,10 +364,7 @@ const retweet = async (tweetId) => {
   await API.graphql({
     query: gql`
       mutation retweet($tweetId: ID!) {
-        retweet(tweetId: $tweetId) {
-          id
-          createdAt
-        }
+        retweet(tweetId: $tweetId)
       }
     `,
     variables: {

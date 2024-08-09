@@ -31,4 +31,24 @@ export default {
       return tweet;
     });
   },
+
+  TWITTER_RETWEET(state, tweetId) {
+    state.tweets.tweets = state.tweets.tweets.map((tweet) => {
+      if (tweet.id === tweetId) {
+        tweet.retweeted = true;
+        tweet.retweets += 1;
+      }
+      return tweet;
+    });
+  },
+
+  TWITTER_UNRETWEET(state, tweetId) {
+    state.tweets.tweets = state.tweets.tweets.map((tweet) => {
+      if (tweet.id === tweetId) {
+        tweet.retweeted = false;
+        tweet.retweets -= 1;
+      }
+      return tweet;
+    });
+  },
 };

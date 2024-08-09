@@ -36,11 +36,13 @@ export default {
     commit("TWITTER_UNLIKE", tweetId);
   },
 
-  async retweetTweet(_, tweetId) {
+  async retweetTweet({ commit }, tweetId) {
     await retweet(tweetId);
+    commit("TWITTER_RETWEET", tweetId);
   },
 
-  async unretweetTweet(_, tweetId) {
+  async unretweetTweet({ commit }, tweetId) {
     await unretweet(tweetId);
+    commit("TWITTER_UNRETWEET", tweetId);
   },
 };
