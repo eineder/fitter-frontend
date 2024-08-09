@@ -10,7 +10,11 @@ export default {
       global: true,
     });
     commit("USER_LOGOUT");
-    router.push("/");
+    router.push("/").catch((err) => {
+      if (err.name !== "NavigationDuplicated") {
+        throw err;
+      }
+    });
   },
   async signUp({ commit }, form) {
     const user = await Auth.signUp({
