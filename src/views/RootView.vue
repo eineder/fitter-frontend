@@ -18,6 +18,10 @@
             <i class="fas fa-comment text-white text-2xl mr-5"></i>
             <p class="text-white font-bold text-xl">Join the conversation.</p>
           </div>
+          <div class="flex items-center mt-20">
+            <i class="fas fa-comment text-white text-2xl mr-5"></i>
+            <about-dialog class="text-white font-bold text-xl">Join the conversation.</about-dialog>
+          </div>
         </div>
       </div>
     </div>
@@ -260,9 +264,13 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import AboutDialog from "../components/AboutDialog.vue";
 
 export default {
   name: "RootView",
+  components: {
+    AboutDialog,
+  },
   data() {
     return {
       name: "",
