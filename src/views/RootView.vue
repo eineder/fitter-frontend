@@ -19,8 +19,8 @@
             <p class="text-white font-bold text-xl">Join the conversation.</p>
           </div>
           <div class="flex items-center mt-20">
-            <i class="fas fa-comment text-white text-2xl mr-5"></i>
-            <about-dialog class="text-white font-bold text-xl">Join the conversation.</about-dialog>
+            <i class="fas fa-question text-white text-2xl mr-5"></i>
+            <about-dialog class="text-white font-bold text-xl"></about-dialog>
           </div>
         </div>
       </div>
@@ -50,10 +50,10 @@
       <div class="flex items-center justify-center w-full h-full">
         <div class="w-full md:w-1/2 flex flex-col font-bold p-5 md:p-0">
           <i class="fa-solid fa-kiwi-bird text-blue text-4xl mb-5"></i>
-          <p class="text-3xl mb-12">
+          <p class="text-3xl mb-12 text-blue">
             Does the X make you bitter?<br>Try Fitter.
           </p>
-          <p>Join Fitter today.</p>
+          <p class="text-blue">Join Fitter today.</p>
           <button @click.prevent="_setSignupStep('step1')"
             class="rounded-full bg-blue font-bold text-lg text-white mt-4 p-3 hover:bg-darkblue">
             Sign up
